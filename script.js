@@ -5,7 +5,7 @@ IMPORTANTE:
 3. La URL debe terminar normalmente en /exec.
 */
 
-const APPS_SCRIPT_URL = "PEGA_AQUI_LA_URL_DE_TU_APPS_SCRIPT";
+const APPS_SCRIPT_URL = "https://script.google.com/a/macros/umh.es/s/AKfycbxYGajbnbbXOXyXSuZrD_9eZHfkJ34j0X2TyiPoxNqqYDqOQzMCu7d-vGNFbPKnyqsX/exec";
 
 document.getElementById("authorization").addEventListener("change", function() {
   document.getElementById("customDates").classList.toggle("hidden", this.value !== "custom");
