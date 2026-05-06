@@ -14,7 +14,7 @@ PASOS:
 7. Copia la URL /exec y pégala en script.js.
 */
 
-const SHEET_ID = "PEGA_AQUI_EL_ID_DE_TU_GOOGLE_SHEET";
+const SHEET_ID = "https://docs.google.com/spreadsheets/d/1Nd7KRSRNv2uw1hVLA0ynADh1SYst8cgI/edit?usp=sharing&ouid=115620463965428705833&rtpof=true&sd=true";
 const PATIENTS_SHEET = "Pacientes";
 
 const PROFESSIONALS = [
