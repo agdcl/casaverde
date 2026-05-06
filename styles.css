@@ -1,32 +1,55 @@
 body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   margin: 0;
   background: #f5f2ea;
+  color: #1f2933;
 }
 
 header {
   background: #2f6f73;
   color: white;
-  padding: 20px;
+  padding: 24px;
+}
+
+header h1 {
+  margin: 0 0 8px;
+}
+
+header p {
+  margin: 0;
 }
 
 main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 20px;
+  gap: 22px;
+  padding: 22px;
 }
 
 .card {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
 }
 
-input, select, button {
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+input, select, textarea, button {
   width: 100%;
-  margin-top: 10px;
-  padding: 10px;
+  margin-top: 7px;
+  padding: 11px;
+  border-radius: 9px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+textarea {
+  min-height: 70px;
 }
 
 button {
@@ -34,10 +57,56 @@ button {
   color: white;
   border: none;
   cursor: pointer;
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+button:hover {
+  background: #25595c;
+}
+
+button.secondary {
+  background: #e9ddc9;
+  color: #1f2933;
+}
+
+.proposal, .warning, .ok, .danger {
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 10px;
 }
 
 .proposal {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-top: 10px;
+  background: #f8fbfb;
+  border-left: 5px solid #2f6f73;
+}
+
+.ok {
+  background: #ecfdf3;
+  border-left: 5px solid #15803d;
+}
+
+.warning {
+  background: #fff7ed;
+  border-left: 5px solid #f59e0b;
+}
+
+.danger {
+  background: #fef2f2;
+  border-left: 5px solid #b91c1c;
+}
+
+.small {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  main {
+    grid-template-columns: 1fr;
+  }
 }

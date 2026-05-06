@@ -10,7 +10,7 @@
 
 <header>
   <h1>Gestor inteligente de horarios</h1>
-  <p>Automatización de asignación de pacientes</p>
+  <p>Automatización de asignación de pacientes, revisión de agendas y control de fechas límite de tratamiento</p>
 </header>
 
 <main>
@@ -18,24 +18,70 @@
 <section class="card">
   <h2>Nuevo paciente</h2>
 
-  <input id="name" placeholder="Nombre">
+  <label>Nombre</label>
+  <input id="name" placeholder="Nombre del paciente">
 
+  <label>Tipo de tratamiento</label>
   <select id="type">
     <option value="psicologia">Psicología</option>
     <option value="logopedia">Logopedia</option>
+    <option value="fisioterapia">Fisioterapia</option>
+    <option value="neuropsicologia">Neuropsicología</option>
   </select>
 
-  <select id="freq">
-    <option value="1">1 sesión</option>
-    <option value="2">2 sesiones</option>
+  <label>Sesiones autorizadas o previstas</label>
+  <input id="sessions" type="number" min="1" placeholder="Ej. 12">
+
+  <label>Duración de cada sesión</label>
+  <select id="duration">
+    <option value="45">45 minutos</option>
+    <option value="50" selected>50 minutos</option>
+    <option value="60">60 minutos</option>
   </select>
 
-  <button onclick="generate()">Generar horarios</button>
+  <label>Fecha de inicio</label>
+  <input id="startDate" type="date">
+
+  <label>Tipo de autorización</label>
+  <select id="authorization">
+    <option value="3">3 meses</option>
+    <option value="6">6 meses</option>
+    <option value="custom">Fechas concretas</option>
+  </select>
+
+  <div id="customDates" class="hidden">
+    <label>Fecha límite concreta</label>
+    <input id="customLimitDate" type="date">
+  </div>
+
+  <label>Preferencia horaria</label>
+  <select id="preference">
+    <option value="any">Cualquier horario</option>
+    <option value="morning">Mañana</option>
+    <option value="afternoon">Tarde</option>
+  </select>
+
+  <label>Notas</label>
+  <textarea id="notes" placeholder="Ej. No puede viernes por la tarde"></textarea>
+
+  <button onclick="generate()">Buscar huecos libres</button>
+  <button class="secondary" onclick="savePatient()">Guardar paciente en Google Sheets</button>
 </section>
 
 <section class="card">
-  <h2>Propuestas</h2>
-  <div id="results"></div>
+  <h2>Huecos libres encontrados</h2>
+  <div id="results">Pulsa “Buscar huecos libres” para consultar las agendas.</div>
+</section>
+
+<section class="card">
+  <h2>Control de fechas de tratamiento</h2>
+  <div id="dateReview">Introduce los datos del paciente para revisar fechas.</div>
+</section>
+
+<section class="card">
+  <h2>Pacientes próximos a vencer</h2>
+  <button onclick="loadExpiringPatients()">Revisar vencimientos</button>
+  <div id="expiringPatients"></div>
 </section>
 
 </main>
