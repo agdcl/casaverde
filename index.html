@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestor de Horarios Clínicos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Gestor inteligente de horarios</h1>
+  <p>Automatización de asignación de pacientes</p>
+</header>
+
+<main>
+
+<section class="card">
+  <h2>Nuevo paciente</h2>
+
+  <input id="name" placeholder="Nombre">
+
+  <select id="type">
+    <option value="psicologia">Psicología</option>
+    <option value="logopedia">Logopedia</option>
+  </select>
+
+  <select id="freq">
+    <option value="1">1 sesión</option>
+    <option value="2">2 sesiones</option>
+  </select>
+
+  <button onclick="generate()">Generar horarios</button>
+</section>
+
+<section class="card">
+  <h2>Propuestas</h2>
+  <div id="results"></div>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
